@@ -25,29 +25,27 @@ body, html {
     flex-wrap: wrap;
 }
 
-.navbar h2 {
-    margin: 0;
-    font-size: 1.5rem;
-    flex: 1;
+.logo {
+    height: 60px;
+    vertical-align: middle;
+    padding-top: 15px;
 }
 
-.navbar nav ul {
+.nav-links {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-.navbar nav ul li a {
+.nav-links a {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
     font-size: 1rem;
 }
 
-.navbar nav ul li a:hover {
+.nav-links a:hover {
     color: #f4d03f;
 }
 
@@ -75,12 +73,10 @@ body, html {
 
 video {
     width: 100%;
-    height: auto;
     border-radius: 10px;
 }
 
-/* أزرار الإعجاب والتعليق */
-.like-btn, .comment-btn {
+.action-btn {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
     color: #333;
@@ -92,16 +88,15 @@ video {
     transition: background 0.3s, transform 0.2s;
 }
 
-.like-btn:hover, .comment-btn:hover {
+.action-btn:hover {
     background: rgba(255, 215, 0, 0.9);
     transform: scale(1.05);
 }
 
-.like-btn:active, .comment-btn:active {
+.action-btn:active {
     transform: scale(0.95);
 }
 
-/* تخصيص textarea */
 textarea {
     width: 100%;
     padding: 10px;
@@ -109,9 +104,7 @@ textarea {
     border: 1px solid #ccc;
     resize: none;
     margin-bottom: 10px;
-    font-size: 16px;
     background: rgba(255, 255, 255, 0.9);
-    transition: border-color 0.3s;
 }
 
 textarea:focus {
@@ -119,38 +112,10 @@ textarea:focus {
     outline: none;
 }
 
-button {
-    background: rgba(255, 215, 0, 0.9);
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-button:hover {
-    background: rgba(255, 200, 0, 1);
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-.post {
-    margin-top: 20px;
-}
-
-.actions {
-    margin-top: 10px;
-}
-
 .comment-section {
     margin-top: 10px;
 }
 
-/* تخصيص الفوتر */
 .footer {
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
@@ -159,19 +124,11 @@ button:active {
 }
 
 @media (max-width: 768px) {
-    .navbar h2 {
-        font-size: 1.2rem;
-    }
-
-    .navbar nav ul li a {
-        font-size: 0.9rem;
-    }
-
     .container {
         padding: 15px;
     }
 
-    .like-btn, .comment-btn {
+    .action-btn {
         font-size: 0.9rem;
         padding: 8px 12px;
     }
@@ -183,7 +140,7 @@ button:active {
         align-items: flex-start;
     }
 
-    .navbar nav ul {
+    .nav-links {
         flex-direction: column;
         width: 100%;
     }
