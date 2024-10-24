@@ -22,11 +22,13 @@ body, html {
     left: 0;
     right: 0;
     z-index: 1000;
+    flex-wrap: wrap;
 }
 
 .navbar h2 {
     margin: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
+    flex: 1;
 }
 
 .navbar nav ul {
@@ -34,16 +36,15 @@ body, html {
     display: flex;
     margin: 0;
     padding: 0;
-}
-
-.navbar nav ul li {
-    margin-left: 20px;
+    gap: 15px;
+    flex-wrap: wrap;
 }
 
 .navbar nav ul li a {
     text-decoration: none;
     color: #fff;
     transition: color 0.3s;
+    font-size: 1rem;
 }
 
 .navbar nav ul li a:hover {
@@ -54,9 +55,9 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    min-height: calc(100vh - 120px);
+    margin-top: 80px;
+    padding: 20px;
+    min-height: calc(100vh - 160px);
     text-align: center;
     overflow-y: auto;
 }
@@ -68,77 +69,26 @@ body, html {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+}
+
+video {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 /* أزرار الإعجاب والتعليق */
-.like-btn, .comment-btn {
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    margin-right: 10px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
+.like-btn, .comment-btn, button {
+    width: 100%;
+    max-width: 150px;
+    margin: 5px auto;
 }
 
-.like-btn:hover, .comment-btn:hover {
-    background: rgba(255, 215, 0, 0.9);
-    transform: scale(1.05);
-}
-
-.like-btn:active, .comment-btn:active {
-    transform: scale(0.95);
-}
-
-/* تخصيص textarea */
 textarea {
     width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    resize: none;
-    margin-bottom: 10px;
-    font-size: 16px;
-    background: rgba(255, 255, 255, 0.9);
-    transition: border-color 0.3s;
-}
-
-textarea:focus {
-    border-color: rgba(60, 132, 206, 1);
-    outline: none;
-}
-
-button {
-    background: rgba(255, 215, 0, 0.9);
-    color: #333;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-button:hover {
-    background: rgba(255, 200, 0, 1);
-    transform: scale(1.05);
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-.post {
-    margin-top: 20px;
-}
-
-.actions {
-    margin-top: 10px;
-}
-
-.comment-section {
-    margin-top: 10px;
+    max-width: 600px;
 }
 
 /* تخصيص الفوتر */
@@ -147,35 +97,43 @@ button:active {
     color: #fff;
     padding: 10px;
     text-align: center;
-    /* position: fixed; */
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
 }
 
-/* تأثير التدرج */
-@keyframes gradient {
-    0% { background-position: 0% 0%; }
-    50% { background-position: 100% 100%; }
-    100% { background-position: 0% 0%; }
+@media (max-width: 768px) {
+    .navbar h2 {
+        font-size: 1.2rem;
+    }
+
+    .navbar nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .like-btn, .comment-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
 }
 
-/* تخصيص شكل شريط التمرير */
-::-webkit-scrollbar {
-    width: 10px;
-}
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
-    border-radius: 10px;
-}
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 10px;
-}
+    .blur-background {
+        margin-top: 120px;
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    .footer {
+        font-size: 0.8rem;
+    }
 }
