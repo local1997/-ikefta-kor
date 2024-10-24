@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>صفحة نشر الفيديوهات والمنشورات</title>
+    <title>şikefta-kor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="navbar">
         <h2>
-            <img src="3.png" alt="Website Logo" style="height: 60px; vertical-align: middle; padding-top: 15px;">
+            <img src="3.png" alt="Website Logo" class="logo">
             Our Website
         </h2>
         <nav>
-            <ul>
+            <ul class="nav-links">
                 <li><a href="vv.html">Home</a></li>
                 <li><a href="#">Videos</a></li>
                 <li><a href="#">Posts</a></li>
@@ -22,27 +22,27 @@
         </nav>
     </header>
     
-    <div class="blur-background">
-        <div class="container">
-            <h1>  Film (1) </h1>
+    <main class="blur-background">
+        <section class="container">
+            <h1>Film (1)</h1>
             <div class="post" id="post1">
-                <!-- <h3>post 1</h3> -->
-                <video width="800" controls>
+                <video controls>
                     <source src="video/2.mp4" type="video/mp4">
                     متصفحك لا يدعم تشغيل الفيديو.
                 </video>
                 <div class="actions">
-                    <button class="like-btn " onclick="likePost('post1')">❤️ إعجاب <span id="like-count-post1">0</span></button>
-                    <button class="comment-btn" onclick="toggleCommentBox('post1')">💬 تعليق</button>
-                    <div class="comment-section" id="comment-section-post1" style="display: none;">
-                        <textarea placeholder="اكتب تعليقك هنا..." id="comment-input-post1"></textarea>
-                        <button onclick="addComment('post1')">نشر التعليق</button>
-                        <ul id="comments-list-post1"></ul>
-                    </div>
+                    <button class="action-btn like-btn" onclick="likePost('post1')">❤️ إعجاب <span id="like-count-post1">0</span></button>
+                    <button class="action-btn comment-btn" onclick="toggleCommentBox('post1')">💬 تعليق</button>
+                </div>
+                <div class="comment-section" id="comment-section-post1" style="display: none;">
+                    <textarea placeholder="اكتب تعليقك هنا..." id="comment-input-post1"></textarea>
+                    <button onclick="addComment('post1')">نشر التعليق</button>
+                    <ul id="comments-list-post1"></ul>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
+
     <footer class="footer">
         <p>© 2024 جميع الحقوق محفوظة - موقع الفيديوهات والمنشورات</p>
     </footer>
