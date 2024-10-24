@@ -1,8 +1,6 @@
-// script.js
 function likePost(postId) {
     const likeCountSpan = document.getElementById(`like-count-${postId}`);
-    let currentCount = parseInt(likeCountSpan.textContent);
-    likeCountSpan.textContent = currentCount + 1;
+    likeCountSpan.textContent = parseInt(likeCountSpan.textContent) + 1;
 }
 
 function toggleCommentBox(postId) {
@@ -14,11 +12,11 @@ function addComment(postId) {
     const commentInput = document.getElementById(`comment-input-${postId}`);
     const commentList = document.getElementById(`comments-list-${postId}`);
 
-    if (commentInput.value.trim() !== '') {
+    if (commentInput.value.trim()) {
         const newComment = document.createElement('li');
         newComment.textContent = commentInput.value;
         commentList.appendChild(newComment);
-        commentInput.value = ''; // مسح المدخل بعد النشر
+        commentInput.value = '';
     } else {
         alert('الرجاء إدخال تعليق قبل النشر.');
     }
