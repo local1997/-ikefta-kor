@@ -80,15 +80,74 @@ video {
 }
 
 /* أزرار الإعجاب والتعليق */
-.like-btn, .comment-btn, button {
-    width: 100%;
-    max-width: 150px;
-    margin: 5px auto;
+.like-btn, .comment-btn {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
 }
 
+.like-btn:hover, .comment-btn:hover {
+    background: rgba(255, 215, 0, 0.9);
+    transform: scale(1.05);
+}
+
+.like-btn:active, .comment-btn:active {
+    transform: scale(0.95);
+}
+
+/* تخصيص textarea */
 textarea {
     width: 100%;
-    max-width: 600px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    resize: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: rgba(60, 132, 206, 1);
+    outline: none;
+}
+
+button {
+    background: rgba(255, 215, 0, 0.9);
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background: rgba(255, 200, 0, 1);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.post {
+    margin-top: 20px;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.comment-section {
+    margin-top: 10px;
 }
 
 /* تخصيص الفوتر */
